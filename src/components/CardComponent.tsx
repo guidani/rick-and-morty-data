@@ -1,53 +1,47 @@
 import { Badge, Box, Flex, Image, Text } from "@chakra-ui/react";
 
-export const CardComponent = () => {
-  const properties = {
-    id: 2,
-    name: "Morty Smith",
-    status: "Alive",
-    gender: "Male",
-    image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
-  };
+export interface ICharacter {
+  id: number;
+  name: string;
+  status?: string;
+  image: string;
+}
 
+export const CardComponent = ({ id, name, status, image }: ICharacter) => {
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={properties.image} alt={properties.name} />
+      <Image src={image} alt={name} />
       <Box p={2}>
+        <Text>{id}</Text>
         <Flex justifyContent="space-between">
           <Text>Name</Text>
-          <Text>{properties.name}</Text>
+          <Text>{name}</Text>
         </Flex>
         <Flex justifyContent="space-between">
           <Text>Status:</Text>
-          <CustomBadge alive />
+          <CustomBadge status={status} />
         </Flex>
       </Box>
     </Box>
   );
 };
 
-type CharacterStatus = {
-  alive?: boolean;
-  dead?: boolean;
-  unknown?: boolean;
-};
-
-export const CustomBadge = (props: CharacterStatus) => {
-  if (props.alive) {
+export const CustomBadge = (props: any) => {
+  if (props?.status === "Alive") {
     return (
       <Badge variant="solid" colorScheme="green">
         Alive
       </Badge>
     );
   }
-  if (props.dead) {
+  if (props?.status === "Dead") {
     return (
       <Badge variant="solid" colorScheme="blackAlpha" color="white">
         Dead
       </Badge>
     );
   }
-  if (props.unknown) {
+  if (props?.status === "Unknown") {
     return (
       <Badge variant="solid" colorScheme="gray">
         Unknown
