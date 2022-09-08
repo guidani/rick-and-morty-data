@@ -16,6 +16,7 @@ export const SearchBox = () => {
           leftIcon={<FiSearch />}
           variant="solid"
           onClick={() => console.log("ola")}
+          colorScheme='brand'
         >
           Pesquisar
         </Button>
