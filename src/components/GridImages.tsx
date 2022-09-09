@@ -1,10 +1,12 @@
 import { useQuery } from "@apollo/client";
 import { SimpleGrid, Spinner } from "@chakra-ui/react";
+import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
 import { CardComponent, ICharacter } from "./CardComponent";
 
 export const GridImages = () => {
   const { loading, error, data } = useQuery(GET_CHARACTERS);
+  const [results, setResults] = useState([])
 
   if (loading)
     return (
