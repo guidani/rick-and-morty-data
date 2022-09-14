@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const GET_CHARACTERS = gql`
-  query getCharacters {
-    characters(page: 1) {
+  query getCharacters($page: Int) {
+    characters(page: $page) {
       results {
         id
         name
@@ -10,10 +10,10 @@ export const GET_CHARACTERS = gql`
         image
         species
         gender
-        origin{
+        origin {
           name
         }
-        location{
+        location {
           name
         }
       }
