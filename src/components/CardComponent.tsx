@@ -1,13 +1,44 @@
-import { Badge, Box, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Badge,
+  Box,
+  Button,
+  Flex,
+  Image,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { CustomBadge } from "./CustomBadge";
+
 
 export interface ICharacter {
   id: number;
   name: string;
-  status?: string;
   image: string;
+  status?: string;
+  species?: string;
+  gender?: string;
+  origin?: string | null | undefined;
+  location?: string | null | undefined;
 }
 
-export const CardComponent = ({ id, name, status, image }: ICharacter) => {
+export const CardComponent = ({
+  id,
+  name,
+  status,
+  image,
+  species,
+  gender,
+  origin,
+  location,
+}: ICharacter) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <Image src={image} alt={name} />
@@ -21,36 +52,48 @@ export const CardComponent = ({ id, name, status, image }: ICharacter) => {
           <Text>Status:</Text>
           <CustomBadge status={status} />
         </Flex>
+        {/* Modal */}
+        <Button onClick={onOpen} colorScheme="brand">
+          Ver mais
+        </Button>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader alignSelf="center">{name}</ModalHeader>
+            {/* <ModalCloseButton /> */}
+            <ModalBody>
+              <Image src={image} alt={name} alignSelf="center" />
+              <Flex justifyContent="space-between">
+                <Text>Status:</Text>
+                <CustomBadge status={status} />
+              </Flex>
+              <Flex justifyContent="space-between">
+                <Text>Specie:</Text>
+                <Text>{species}</Text>
+              </Flex>
+              <Flex justifyContent="space-between">
+                <Text>Gender:</Text>
+                <Text>{gender}</Text>
+              </Flex>
+              <Flex justifyContent="space-between">
+                <Text>Origin:</Text>
+                <Text>{origin?.name}</Text>
+              </Flex>
+              <Flex justifyContent="space-between">
+                <Text>Location:</Text>
+                <Text>{location?.name}</Text>
+              </Flex>
+            </ModalBody>
+            {/*  */}
+            <ModalFooter>
+              <Button colorScheme="blue" onClick={onClose}>
+                Close
+              </Button>
+              {/* <Button variant="ghost">Secondary Action</Button> */}
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Box>
     </Box>
-  );
-};
-
-export const CustomBadge = (props: any) => {
-  if (props?.status === "Alive") {
-    return (
-      <Badge variant="solid" colorScheme="green">
-        Alive
-      </Badge>
-    );
-  }
-  if (props?.status === "Dead") {
-    return (
-      <Badge variant="solid" colorScheme="blackAlpha" color="white">
-        Dead
-      </Badge>
-    );
-  }
-  if (props?.status === "Unknown") {
-    return (
-      <Badge variant="solid" colorScheme="gray">
-        Unknown
-      </Badge>
-    );
-  }
-  return (
-    <Badge variant="solid" colorScheme="gray">
-      Unknown
-    </Badge>
   );
 };

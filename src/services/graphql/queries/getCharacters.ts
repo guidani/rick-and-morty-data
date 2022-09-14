@@ -8,6 +8,14 @@ export const GET_CHARACTERS = gql`
         name
         status
         image
+        species
+        gender
+        origin{
+          name
+        }
+        location{
+          name
+        }
       }
     }
   }
