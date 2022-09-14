@@ -1,4 +1,5 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -11,8 +12,9 @@ export const Header = () => {
       alignItems="center"
       py={[6, 12, 16]}
     >
-      <Heading fontSize={[30, 50, 60]}>Rick and Morty</Heading>
-      {/* <Text fontSize={{ base: 10, md: 16, lg: 40 }}>Teste</Text> */}
+      <RouterLink to="/">
+        <Heading fontSize={[30, 50, 60]}>Rick and Morty</Heading>
+      </RouterLink>
     </Box>
   );
 };

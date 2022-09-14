@@ -1,24 +1,11 @@
-import { useLazyQuery } from "@apollo/client";
 import { Box, Button, Flex, Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { GET_CHARACTER_BY_NAME } from "../services/graphql/queries/getCharacterByName";
+import { useNavigate } from "react-router-dom";
 
 export const SearchBox = () => {
   const [name, setName] = useState("");
-  const [getCharacterByName, { loading, error, data, called }] = useLazyQuery(
-    GET_CHARACTER_BY_NAME,
-    {
-      variables: { name: name },
-    }
-  );
-
-  console.log({
-    loading,
-    error,
-    data,
-    called,
-  });
+  const navigate = useNavigate();
   return (
     <>
       <Flex
@@ -38,22 +25,14 @@ export const SearchBox = () => {
             w="100%"
             leftIcon={<FiSearch />}
             variant="solid"
-            onClick={() => getCharacterByName()}
+            onClick={() => navigate(`/search/${name}`)}
             colorScheme="brand"
           >
             Pesquisar
           </Button>
         </Box>
       </Flex>
-      {loading && <div>Loading...</div>}
-      {error && <div>Error...</div>}
-      {data && (
-        <>
-          {data.characters.results.map((char) => {
-            return <p>{char.id}</p>;
-          })}
-        </>
-      )}
+     
     </>
   );
 };
