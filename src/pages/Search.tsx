@@ -1,25 +1,42 @@
-import { useLazyQuery, useQuery } from '@apollo/client';
-import { SimpleGrid } from '@chakra-ui/react';
-import {useParams} from 'react-router-dom'
-import { CardComponent, ICharacter } from '../components/CardComponent';
-import { LoadingIcon } from '../components/LoadingIcon';
-import { GET_CHARACTER_BY_NAME } from '../services/graphql/queries/getCharacterByName';
+import { useQuery } from "@apollo/client";
+import { Button, Heading, SimpleGrid } from "@chakra-ui/react";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { CardComponent, ICharacter } from "../components/CardComponent";
+import { LoadingIcon } from "../components/LoadingIcon";
+import { SearchBox } from "../components/SearchBox";
+import { GET_CHARACTER_BY_NAME } from "../services/graphql/queries/getCharacterByName";
 
 export const Search = () => {
-  let {name} = useParams();
-  const { loading, error, data } = useQuery(
-    GET_CHARACTER_BY_NAME,
-    {
-      variables: { name: name },
-    }
-  );
-    console.log(data)
+  const [counter, setCounter] = useState(1);
+  const { name } = useParams();
+  const { loading, error, data } = useQuery(GET_CHARACTER_BY_NAME, {
+    variables: { name: name, page: counter },
+  });
+
+  let hasPrev = data?.characters?.info?.prev;
+  let hasNext = data?.characters?.info?.next;
+
   if (loading) return <LoadingIcon />;
   if (error) return <p>Error...</p>;
 
   return (
     <>
-    <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
+    <SearchBox />
+    <Heading as="h2">Resultado da busca</Heading>
+      <Button
+        onClick={() => setCounter(counter - 1)}
+        disabled={hasPrev == null ? true : false}
+      >
+        Anterior
+      </Button>
+      <Button
+        onClick={() => setCounter(counter + 1)}
+        disabled={hasNext ? false : true}
+      >
+        Próximo
+      </Button>
+      <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
         {data?.characters?.results.map(
           ({
             id,
@@ -46,6 +63,5 @@ export const Search = () => {
         )}
       </SimpleGrid>
     </>
-    
-  )
-}
+  );
+};

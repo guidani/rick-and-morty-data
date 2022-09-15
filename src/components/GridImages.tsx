@@ -2,7 +2,6 @@ import { useQuery } from "@apollo/client";
 import { Button, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
-import { GET_PAGE_INFO } from "../services/graphql/queries/getPageInfo";
 import { CardComponent, ICharacter } from "./CardComponent";
 import { LoadingIcon } from "./LoadingIcon";
 
@@ -11,22 +10,25 @@ export const GridImages = () => {
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: { page: counter },
   });
+  let hasPrev = data?.characters?.info?.prev;
+  let hasNext = data?.characters?.info?.next;
 
   if (loading) return <LoadingIcon />;
   if (error) return <p>Error...</p>;
+
   return (
     <>
       <Button
         onClick={() => setCounter(counter - 1)}
-        disabled={counter == 1 ? true : false}
+        disabled={hasPrev == null ? true : false}
       >
-        Prev
+        Anterior
       </Button>
       <Button
         onClick={() => setCounter(counter + 1)}
-        disabled={counter == 42 ? true : false}
+        disabled={hasNext ? false : true}
       >
-        Next
+        Próximo
       </Button>
       <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
         {data?.characters?.results.map(

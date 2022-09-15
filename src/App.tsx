@@ -6,17 +6,6 @@ import { Router } from "./Router/Router";
 
 function App() {
   return (
-    // <VStack>
-    //   {/* Header */}
-    //   <Header />
-    //   {/* Search box */}
-    //   <SearchBox />
-    //   {/* Characters */}
-    //   <Heading as='h2'>
-    //     Characters
-    //   </Heading>
-    //   <GridImages />
-    // </VStack>
     <Router/>
   );
 }

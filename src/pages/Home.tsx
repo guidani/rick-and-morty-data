@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <>
       <SearchBox />
-      <Heading as="h2">Characters</Heading>
+      <Heading as="h2">Personagens</Heading>
       <GridImages />
     </>
   );
