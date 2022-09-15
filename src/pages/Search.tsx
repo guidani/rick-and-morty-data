@@ -13,13 +13,12 @@ export const Search = () => {
       variables: { name: name },
     }
   );
-
+    console.log(data)
   if (loading) return <LoadingIcon />;
   if (error) return <p>Error...</p>;
 
   return (
     <>
-    <div>{name}</div>
     <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
         {data?.characters?.results.map(
           ({
