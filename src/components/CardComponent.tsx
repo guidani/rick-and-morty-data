@@ -15,6 +15,14 @@ import {
 } from "@chakra-ui/react";
 import { CustomBadge } from "./CustomBadge";
 
+type TOrigin = {
+  name: string;
+}
+
+type TLocation = {
+  name: string;
+}
+
 
 export interface ICharacter {
   id: number;
@@ -23,8 +31,8 @@ export interface ICharacter {
   status?: string;
   species?: string;
   gender?: string;
-  origin?: string | null | undefined;
-  location?: string | null | undefined;
+  origin: TOrigin;
+  location: TLocation;
 }
 
 export const CardComponent = ({
