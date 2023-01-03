@@ -9,3 +9,6 @@ No projeto foram utilizadas as seguintes tecnologias:
 - Graphql: linguagem de consulta de dados
 - Apollo Client: biblioteca de gerencia de estado utilizada para, entre outras funções, realizar as requisições na API.
 
+![imagem](./public/photo_site_grid.png)
+
+![imagem](./public/photo_site_modal.png)
