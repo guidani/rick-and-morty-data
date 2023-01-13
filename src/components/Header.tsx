@@ -10,10 +10,10 @@ export const Header = () => {
       display="flex"
       flexDirection="column"
       alignItems="center"
-      py={[6, 12, 16]}
+      py={[2, 4, 6]}
     >
       <RouterLink to="/">
-        <Heading fontSize={[30, 50, 60]}>Rick and Morty</Heading>
+        <Heading fontSize={["1xl", "2xl", "4xl"]}>Rick and Morty</Heading>
       </RouterLink>
     </Box>
   );

@@ -15,10 +15,13 @@ export const Footer = () => {
       <HStack>
         <Text>Desenvolvidor por Guilherme Daniel</Text>
         <Link href="https://www.linkedin.com/in/guilherme-daniel/" isExternal>
-          <FiLinkedin/>
+          <FiLinkedin />
         </Link>
-        <Link href="https://github.com/guidani/Rick-and-Morty-Characters-Data" isExternal >
-          <FiGithub/>
+        <Link
+          href="https://github.com/guidani/Rick-and-Morty-Characters-Data"
+          isExternal
+        >
+          <FiGithub />
         </Link>
       </HStack>
     </Box>

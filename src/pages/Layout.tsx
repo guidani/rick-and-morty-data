@@ -6,11 +6,11 @@ import { Header } from "../components/Header";
 const Layout = () => {
   return (
     <>
-    <VStack>
-      <Header />
-      <Outlet />
-      <Footer/>
-    </VStack>
+      <VStack>
+        <Header />
+        <Outlet />
+        <Footer />
+      </VStack>
     </>
   );
 };
