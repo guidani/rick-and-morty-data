@@ -16,3 +16,8 @@ No projeto foram utilizadas as seguintes tecnologias:
 ![imagem](./public/photo_site_grid.png)
 
 ![imagem](./public/photo_site_modal.png)
+
+
+## TODO
+- Adicionar modo noturno.
+- Adicionar visualização de localizações e episódios.
