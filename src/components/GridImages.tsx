@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Button, SimpleGrid } from "@chakra-ui/react";
+import { Button, HStack, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
 import { CardComponent, ICharacter } from "./CardComponent";
@@ -18,18 +18,20 @@ export const GridImages = () => {
 
   return (
     <>
-      <Button
-        onClick={() => setCounter(counter - 1)}
-        disabled={hasPrev == null ? true : false}
-      >
-        Anterior
-      </Button>
-      <Button
-        onClick={() => setCounter(counter + 1)}
-        disabled={hasNext ? false : true}
-      >
-        Próximo
-      </Button>
+      <HStack>
+        <Button
+          onClick={() => setCounter(counter - 1)}
+          disabled={hasPrev == null ? true : false}
+        >
+          Anterior
+        </Button>
+        <Button
+          onClick={() => setCounter(counter + 1)}
+          disabled={hasNext ? false : true}
+        >
+          Próximo
+        </Button>
+      </HStack>
       <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
         {data?.characters?.results.map(
           ({

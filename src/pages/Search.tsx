@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Button, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Button, Heading, HStack, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { CardComponent, ICharacter } from "../components/CardComponent";
@@ -29,18 +29,20 @@ export const Search = () => {
         <p>Nada encontrado</p>
       ) : (
         <>
-          <Button
-            onClick={() => setCounter(counter - 1)}
-            disabled={hasPrev == null ? true : false}
-          >
-            Anterior
-          </Button>
-          <Button
-            onClick={() => setCounter(counter + 1)}
-            disabled={hasNext ? false : true}
-          >
-            Próximo
-          </Button>
+          <HStack>
+            <Button
+              onClick={() => setCounter(counter - 1)}
+              disabled={hasPrev == null ? true : false}
+            >
+              Anterior
+            </Button>
+            <Button
+              onClick={() => setCounter(counter + 1)}
+              disabled={hasNext ? false : true}
+            >
+              Próximo
+            </Button>
+          </HStack>
           <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
             {data?.characters?.results.map(
               ({
