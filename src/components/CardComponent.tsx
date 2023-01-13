@@ -60,7 +60,7 @@ export const CardComponent = ({
           <CustomBadge status={status} />
         </Flex>
         {/* Modal */}
-        <Button onClick={onOpen} colorScheme="brand">
+        <Button onClick={onOpen} colorScheme="brand" w="full" mt="1">
           Ver mais
         </Button>
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -93,7 +93,7 @@ export const CardComponent = ({
             </ModalBody>
             {/*  */}
             <ModalFooter>
-              <Button colorScheme="blue" onClick={onClose}>
+              <Button colorScheme="red" onClick={onClose} w="full">
                 Close
               </Button>
               {/* <Button variant="ghost">Secondary Action</Button> */}
