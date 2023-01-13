@@ -51,7 +51,6 @@ export const CardComponent = ({
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <Image src={image} alt={name} />
       <Box p={2}>
-        <Text>{id}</Text>
         <Flex justifyContent="space-between">
           <Text>Name</Text>
           <Text>{name}</Text>

@@ -25,6 +25,7 @@ export const Search = () => {
       <SearchBox />
       <Heading as="h2">Resultado da busca</Heading>
       {data.characters.results.length == 0 ? (
+        // TODO: adicionar um componente bonito
         <p>Nada encontrado</p>
       ) : (
         <>
