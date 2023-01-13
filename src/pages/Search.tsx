@@ -22,46 +22,52 @@ export const Search = () => {
 
   return (
     <>
-    <SearchBox />
-    <Heading as="h2">Resultado da busca</Heading>
-      <Button
-        onClick={() => setCounter(counter - 1)}
-        disabled={hasPrev == null ? true : false}
-      >
-        Anterior
-      </Button>
-      <Button
-        onClick={() => setCounter(counter + 1)}
-        disabled={hasNext ? false : true}
-      >
-        Próximo
-      </Button>
-      <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
-        {data?.characters?.results.map(
-          ({
-            id,
-            name,
-            status,
-            image,
-            species,
-            gender,
-            location,
-            origin,
-          }: ICharacter) => (
-            <CardComponent
-              key={id}
-              id={id}
-              image={image}
-              name={name}
-              status={status}
-              species={species}
-              gender={gender}
-              location={location}
-              origin={origin}
-            />
-          )
-        )}
-      </SimpleGrid>
+      <SearchBox />
+      <Heading as="h2">Resultado da busca</Heading>
+      {data.characters.results.length == 0 ? (
+        <p>Nada encontrado</p>
+      ) : (
+        <>
+          <Button
+            onClick={() => setCounter(counter - 1)}
+            disabled={hasPrev == null ? true : false}
+          >
+            Anterior
+          </Button>
+          <Button
+            onClick={() => setCounter(counter + 1)}
+            disabled={hasNext ? false : true}
+          >
+            Próximo
+          </Button>
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
+            {data?.characters?.results.map(
+              ({
+                id,
+                name,
+                status,
+                image,
+                species,
+                gender,
+                location,
+                origin,
+              }: ICharacter) => (
+                <CardComponent
+                  key={id}
+                  id={id}
+                  image={image}
+                  name={name}
+                  status={status}
+                  species={species}
+                  gender={gender}
+                  location={location}
+                  origin={origin}
+                />
+              )
+            )}
+          </SimpleGrid>
+        </>
+      )}
     </>
   );
 };
