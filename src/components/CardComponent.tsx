@@ -53,7 +53,7 @@ export const CardComponent = ({
       <Box p={2}>
         <Flex justifyContent="space-between">
           <Text>Name</Text>
-          <Text>{name}</Text>
+          <Text noOfLines={1}>{name}</Text>
         </Flex>
         <Flex justifyContent="space-between">
           <Text>Status:</Text>

@@ -13,14 +13,11 @@ export const Footer = () => {
       py={4}
     >
       <HStack>
-        <Text>Desenvolvidor por Guilherme Daniel</Text>
+        <Text>Desenvolvido por Guilherme Daniel</Text>
         <Link href="https://www.linkedin.com/in/guilherme-daniel/" isExternal>
           <FiLinkedin />
         </Link>
-        <Link
-          href="https://github.com/guidani/Rick-and-Morty-Characters-Data"
-          isExternal
-        >
+        <Link href="https://github.com/guidani" isExternal>
           <FiGithub />
         </Link>
       </HStack>
