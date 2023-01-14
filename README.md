@@ -19,5 +19,7 @@ No projeto foram utilizadas as seguintes tecnologias:
 
 
 ## TODO
-- Adicionar modo noturno.
-- Adicionar visualização de localizações e episódios.
+- modo noturno.
+- visualização de localizações e episódios.
+  - Mobile: menu lateral
+- troca entre visualização de grade e lista.
