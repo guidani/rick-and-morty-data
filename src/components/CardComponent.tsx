@@ -1,5 +1,4 @@
 import {
-  Badge,
   Box,
   Button,
   Flex,
@@ -17,22 +16,28 @@ import { CustomBadge } from "./CustomBadge";
 
 type TOrigin = {
   name: string;
-}
+};
 
 type TLocation = {
   name: string;
-}
-
+};
 
 export interface ICharacter {
   id: number;
   name: string;
-  image: string;
+  image?: string;
   status?: string;
   species?: string;
   gender?: string;
-  origin: TOrigin;
-  location: TLocation;
+  origin?: TOrigin;
+  location?: TLocation;
+}
+
+export interface ILocation {
+  id: number;
+  name: string;
+  type?: string;
+  dimension?: string;
 }
 
 export const CardComponent = ({
