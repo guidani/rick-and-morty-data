@@ -1,38 +1,28 @@
 import { useQuery } from "@apollo/client";
-import { Button, HStack, SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
 import { CharacterCardComponent } from "./CharacterCardComponent";
 import { ICharacter } from "./ICharacter";
 import { LoadingIcon } from "./LoadingIcon";
+import { Pagination } from "./Pagination";
 
 export const CharactersGrid = () => {
   const [counter, setCounter] = useState(1);
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: { page: counter },
   });
-  let hasPrev = data?.characters?.info?.prev;
-  let hasNext = data?.characters?.info?.next;
 
   if (loading) return <LoadingIcon />;
   if (error) return <p>Error...</p>;
 
   return (
     <>
-      <HStack>
-        <Button
-          onClick={() => setCounter(counter - 1)}
-          disabled={hasPrev == null ? true : false}
-        >
-          Anterior
-        </Button>
-        <Button
-          onClick={() => setCounter(counter + 1)}
-          disabled={hasNext ? false : true}
-        >
-          Próximo
-        </Button>
-      </HStack>
+      {/*  */}
+
+      <Pagination onClick={setCounter} data={data?.characters?.info} />
+
+      {/*  */}
 
       <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
         {data?.characters?.results.map(
