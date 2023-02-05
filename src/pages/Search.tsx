@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { CardComponent, ICharacter } from "../components/CardComponent";
 import { LoadingIcon } from "../components/LoadingIcon";
 import { NotFound } from "../components/NotFound";
-import { SearchBox } from "../components/SearchBox";
 import { GET_CHARACTER_BY_NAME } from "../services/graphql/queries/getCharacterByName";
 
 export const Search = () => {
@@ -23,8 +22,7 @@ export const Search = () => {
 
   return (
     <>
-      <SearchBox />
-      <Heading as="h2">Resultado da busca</Heading>
+      <Heading as="h4">Resultado da busca</Heading>
       {data.characters.results.length == 0 ? (
         // TODO: adicionar um componente bonito
         <NotFound />

@@ -1,19 +1,25 @@
 import { useQuery } from "@apollo/client";
 import { Box, Button, Heading, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { ILocation } from "../components/CardComponent";
 import { LoadingIcon } from "../components/LoadingIcon";
 import { SearchBox } from "../components/SearchBox";
-import { GET_LOCATIONS } from "../services/graphql/queries/getLocations";
+import { GET_EPISODES } from "../services/graphql/queries/getEpisodes";
 
-export const Locations = () => {
+export interface IEpisode {
+  id: number;
+  name: string;
+  episode: string;
+  air_date: string;
+}
+
+export const Episodes = () => {
   const [counter, setCounter] = useState(1);
-  const { loading, error, data } = useQuery(GET_LOCATIONS, {
+  const { loading, error, data } = useQuery(GET_EPISODES, {
     variables: { page: counter },
   });
 
-  let hasPrev = data?.locations?.info?.prev;
-  let hasNext = data?.locations?.info?.next;
+  let hasPrev = data?.episodes?.info?.prev;
+  let hasNext = data?.episodes?.info?.next;
 
   if (loading) return <LoadingIcon />;
   if (error) return <p>Error...</p>;
@@ -21,7 +27,7 @@ export const Locations = () => {
   return (
     <>
       
-      <Heading as="h2">Lugares</Heading>
+      <Heading as="h2">Episodes</Heading>
       {/*  */}
       <HStack>
         <Button
@@ -37,14 +43,14 @@ export const Locations = () => {
           Próximo
         </Button>
       </HStack>
-      ;{/*  */}
-      {data?.locations?.results.map(
-        ({ id, name, type, dimension }: ILocation) => (
+
+      {data?.episodes?.results.map(
+        ({ id, name, episode, air_date }: IEpisode) => (
           <Box>
             <Text>{id}</Text>
             <Text>{name}</Text>
-            <Text>{type}</Text>
-            <Text>{dimension}</Text>
+            <Text>{episode}</Text>
+            <Text>{air_date}</Text>
           </Box>
         )
       )}

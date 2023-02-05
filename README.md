@@ -23,3 +23,5 @@ No projeto foram utilizadas as seguintes tecnologias:
 - visualização de localizações e episódios.
   - Mobile: menu lateral
 - troca entre visualização de grade e lista.
+- Drawer para a navegação no modo mobile
+- No modo mobile o item de pesquisa deve ser apenas um ícone

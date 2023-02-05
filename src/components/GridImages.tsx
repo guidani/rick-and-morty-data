@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { Button, HStack, SimpleGrid } from "@chakra-ui/react";
+import { Button, Container, HStack, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
 import { CardComponent, ICharacter } from "./CardComponent";
@@ -18,46 +18,49 @@ export const GridImages = () => {
 
   return (
     <>
-      <HStack>
-        <Button
-          onClick={() => setCounter(counter - 1)}
-          disabled={hasPrev == null ? true : false}
-        >
-          Anterior
-        </Button>
-        <Button
-          onClick={() => setCounter(counter + 1)}
-          disabled={hasNext ? false : true}
-        >
-          Próximo
-        </Button>
-      </HStack>
-      <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
-        {data?.characters?.results.map(
-          ({
-            id,
-            name,
-            status,
-            image,
-            species,
-            gender,
-            location,
-            origin,
-          }: ICharacter) => (
-            <CardComponent
-              key={id}
-              id={id}
-              image={image}
-              name={name}
-              status={status}
-              species={species}
-              gender={gender}
-              location={location}
-              origin={origin}
-            />
-          )
-        )}
-      </SimpleGrid>
+      <Container maxW="container.lg">
+        <HStack>
+          <Button
+            onClick={() => setCounter(counter - 1)}
+            disabled={hasPrev == null ? true : false}
+          >
+            Anterior
+          </Button>
+          <Button
+            onClick={() => setCounter(counter + 1)}
+            disabled={hasNext ? false : true}
+          >
+            Próximo
+          </Button>
+        </HStack>
+
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
+          {data?.characters?.results.map(
+            ({
+              id,
+              name,
+              status,
+              image,
+              species,
+              gender,
+              location,
+              origin,
+            }: ICharacter) => (
+              <CardComponent
+                key={id}
+                id={id}
+                image={image}
+                name={name}
+                status={status}
+                species={species}
+                gender={gender}
+                location={location}
+                origin={origin}
+              />
+            )
+          )}
+        </SimpleGrid>
+      </Container>{" "}
     </>
   );
 };

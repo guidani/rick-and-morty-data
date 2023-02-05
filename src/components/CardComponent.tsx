@@ -66,7 +66,7 @@ export const CardComponent = ({
         </Flex>
         {/* Modal */}
         <Button onClick={onOpen} colorScheme="brand" w="full" mt="1">
-          Ver mais
+          Detalhes
         </Button>
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />

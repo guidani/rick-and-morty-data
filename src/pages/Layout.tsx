@@ -1,20 +1,18 @@
-import { HStack, VStack } from "@chakra-ui/react";
+import { Center, Wrap, WrapItem } from "@chakra-ui/react";
 import { Link, Outlet } from "react-router-dom";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { LargeNavigation } from "../components/LargeNavigation";
 
+// TODO: Adicionar Drawer para a navegação mobile.
 const Layout = () => {
   return (
     <>
-      <VStack>
-        <Header />
-        <HStack>
-          <Link to="/">Personagens</Link>
-          <Link to="/locations">Lugares</Link>
-        </HStack>
-        <Outlet />
-        <Footer />
-      </VStack>
+      <Header />
+      <LargeNavigation/>
+      
+      <Outlet />
+      <Footer />
     </>
   );
 };

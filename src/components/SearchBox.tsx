@@ -26,7 +26,7 @@ export const SearchBox = () => {
   return (
     <>
       <Flex
-        w={{ base: "100%", md: "60%" }}
+        // w={{ base: "100%", md: "60%" }}
         px={2}
         gap="2"
         flexDirection={{ base: "column", sm: "row" }}
