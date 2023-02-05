@@ -1,9 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { Box, Button, Heading, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { ILocation } from "../components/CardComponent";
+import { ILocation } from "../components/CharacterCardComponent";
 import { LoadingIcon } from "../components/LoadingIcon";
-import { SearchBox } from "../components/SearchBox";
 import { GET_LOCATIONS } from "../services/graphql/queries/getLocations";
 
 export const Locations = () => {
@@ -20,7 +19,6 @@ export const Locations = () => {
 
   return (
     <>
-      
       <Heading as="h2">Lugares</Heading>
       {/*  */}
       <HStack>

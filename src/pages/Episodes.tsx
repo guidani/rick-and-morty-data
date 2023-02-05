@@ -1,16 +1,9 @@
 import { useQuery } from "@apollo/client";
 import { Box, Button, Heading, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
+import { IEpisode } from "../components/IEpisode";
 import { LoadingIcon } from "../components/LoadingIcon";
-import { SearchBox } from "../components/SearchBox";
 import { GET_EPISODES } from "../services/graphql/queries/getEpisodes";
-
-export interface IEpisode {
-  id: number;
-  name: string;
-  episode: string;
-  air_date: string;
-}
 
 export const Episodes = () => {
   const [counter, setCounter] = useState(1);
@@ -26,7 +19,6 @@ export const Episodes = () => {
 
   return (
     <>
-      
       <Heading as="h2">Episodes</Heading>
       {/*  */}
       <HStack>

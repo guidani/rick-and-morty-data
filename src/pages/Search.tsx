@@ -2,7 +2,9 @@ import { useQuery } from "@apollo/client";
 import { Button, Heading, HStack, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { CardComponent, ICharacter } from "../components/CardComponent";
+import { CharacterCardComponent } from "../components/CharacterCardComponent";
+import { ICharacter } from "../components/ICharacter";
+
 import { LoadingIcon } from "../components/LoadingIcon";
 import { NotFound } from "../components/NotFound";
 import { GET_CHARACTER_BY_NAME } from "../services/graphql/queries/getCharacterByName";
@@ -54,7 +56,7 @@ export const Search = () => {
                 location,
                 origin,
               }: ICharacter) => (
-                <CardComponent
+                <CharacterCardComponent
                   key={id}
                   id={id}
                   image={image}

@@ -13,34 +13,9 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { CustomBadge } from "./CustomBadge";
+import { ICharacter } from "./ICharacter";
 
-type TOrigin = {
-  name: string;
-};
-
-type TLocation = {
-  name: string;
-};
-
-export interface ICharacter {
-  id: number;
-  name: string;
-  image?: string;
-  status?: string;
-  species?: string;
-  gender?: string;
-  origin?: TOrigin;
-  location?: TLocation;
-}
-
-export interface ILocation {
-  id: number;
-  name: string;
-  type?: string;
-  dimension?: string;
-}
-
-export const CardComponent = ({
+export const CharacterCardComponent = ({
   id,
   name,
   status,
@@ -101,7 +76,6 @@ export const CardComponent = ({
               <Button colorScheme="red" onClick={onClose} w="full">
                 Close
               </Button>
-              {/* <Button variant="ghost">Secondary Action</Button> */}
             </ModalFooter>
           </ModalContent>
         </Modal>

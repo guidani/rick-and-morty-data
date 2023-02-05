@@ -17,7 +17,6 @@ export const NotFound = () => {
             <FaRegFrown size="128" />
           </Center>
         </Box>
-
         <Text size="6xl">Nenhum resultado corresponde a sua pesquisa!</Text>
       </Flex>
     </Box>

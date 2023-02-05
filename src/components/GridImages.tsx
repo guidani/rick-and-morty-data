@@ -2,7 +2,8 @@ import { useQuery } from "@apollo/client";
 import { Button, Container, HStack, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
-import { CardComponent, ICharacter } from "./CardComponent";
+import { CharacterCardComponent } from "./CharacterCardComponent";
+import { ICharacter } from "./ICharacter";
 import { LoadingIcon } from "./LoadingIcon";
 
 export const GridImages = () => {
@@ -46,7 +47,7 @@ export const GridImages = () => {
               location,
               origin,
             }: ICharacter) => (
-              <CardComponent
+              <CharacterCardComponent
                 key={id}
                 id={id}
                 image={image}
