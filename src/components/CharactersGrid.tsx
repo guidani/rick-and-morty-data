@@ -6,7 +6,7 @@ import { CharacterCardComponent } from "./CharacterCardComponent";
 import { ICharacter } from "./ICharacter";
 import { LoadingIcon } from "./LoadingIcon";
 
-export const GridImages = () => {
+export const CharactersGrid = () => {
   const [counter, setCounter] = useState(1);
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: { page: counter },
