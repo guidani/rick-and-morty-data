@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { Box, Button, Heading, HStack, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { ILocation } from "../components/CharacterCardComponent";
+import { ILocation } from "../components/ILocation";
 import { LoadingIcon } from "../components/LoadingIcon";
 import { GET_LOCATIONS } from "../services/graphql/queries/getLocations";
 

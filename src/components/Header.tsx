@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Container, Heading } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { SearchBox } from "./SearchBox";
 
@@ -12,10 +12,12 @@ export const Header = () => {
       flexDirection={{ base: "column", md: "row" }}
       py={[2, 4, 6]}
     >
-      <RouterLink to="/">
-        <Heading fontSize={["1xl", "2xl", "4xl"]}>Rick and Morty</Heading>
-      </RouterLink>
-      <SearchBox />
+      <Container maxW="container.lg">
+        <RouterLink to="/">
+          <Heading fontSize={["1xl", "2xl", "4xl"]}>Rick and Morty</Heading>
+        </RouterLink>
+        <SearchBox />
+      </Container>
     </Box>
   );
 };

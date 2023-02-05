@@ -9,7 +9,6 @@ const Layout = () => {
     <>
       <Header />
       <LargeNavigation />
-
       <Outlet />
       <Footer />
     </>
