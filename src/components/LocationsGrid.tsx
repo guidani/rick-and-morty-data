@@ -14,6 +14,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { GET_LOCATIONS } from "../services/graphql/queries/getLocations";
 import { ILocation } from "./ILocation";
 import { LoadingIcon } from "./LoadingIcon";
+import { NotFound } from "./NotFound";
 import { Pagination } from "./Pagination";
 
 export const LocationsGrid = () => {
@@ -23,7 +24,7 @@ export const LocationsGrid = () => {
   });
 
   if (loading) return <LoadingIcon />;
-  if (error) return <p>Error...</p>;
+  if (error) return <NotFound />;
   return (
     <>
       <Pagination onClick={setCounter} data={data?.locations?.info} />
