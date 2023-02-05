@@ -1,6 +1,16 @@
 import { useQuery } from "@apollo/client";
-import { Box, Text } from "@chakra-ui/react";
+import {
+  HStack,
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 import { useState } from "react";
+import { FiExternalLink } from "react-icons/fi";
 import { GET_LOCATIONS } from "../services/graphql/queries/getLocations";
 import { ILocation } from "./ILocation";
 import { LoadingIcon } from "./LoadingIcon";
@@ -18,16 +28,36 @@ export const LocationsGrid = () => {
     <>
       <Pagination onClick={setCounter} data={data?.locations?.info} />
 
-      {data?.locations?.results.map(
-        ({ id, name, type, dimension }: ILocation) => (
-          <Box>
-            <Text>{id}</Text>
-            <Text>{name}</Text>
-            <Text>{type}</Text>
-            <Text>{dimension}</Text>
-          </Box>
-        )
-      )}
+      <TableContainer>
+        <Table variant="striped">
+          <Thead>
+            <Tr>
+              <Th>ID</Th>
+              <Th>Nome</Th>
+              <Th>Tipo</Th>
+              <Th>Dimensão</Th>
+              <Th>Residentes</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {data?.locations?.results.map(
+              ({ id, name, type, dimension }: ILocation) => (
+                <Tr>
+                  <Td>{id}</Td>
+                  <Td>{name}</Td>
+                  <Td>{type}</Td>
+                  <Td>{dimension}</Td>
+                  <Td>
+                    <HStack>
+                      <p>Ver</p> <FiExternalLink />
+                    </HStack>
+                  </Td>
+                </Tr>
+              )
+            )}
+          </Tbody>
+        </Table>
+      </TableContainer>
     </>
   );
 };
