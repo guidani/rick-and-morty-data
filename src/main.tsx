@@ -5,7 +5,13 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
+const config = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+}
+
 const theme = extendTheme({
+  config,
   colors: {
     brand: {
       50: "#fcffdd",

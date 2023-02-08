@@ -9,12 +9,16 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  HStack,
+  Spacer,
+  Text,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
 import React, { RefObject } from "react";
 import { FiMenu } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { ChangeColorModeButton } from "./ChangeColorModeButton";
 import { SearchBox } from "./SearchBox";
 
 export default function CustomDrawer() {
@@ -80,7 +84,13 @@ export default function CustomDrawer() {
               </VStack>
             </DrawerBody>
 
-            <DrawerFooter>Rick and Morty</DrawerFooter>
+            <DrawerFooter>
+              <HStack w='100%'>
+                <ChangeColorModeButton />
+                <Spacer />
+                <Text>Rick and Morty</Text>
+              </HStack>
+            </DrawerFooter>
           </DrawerContent>
         </Drawer>
       </Box>
