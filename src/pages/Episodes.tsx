@@ -5,7 +5,9 @@ export const Episodes = () => {
   return (
     <>
       <Container maxW="container.lg">
-        <Heading as="h2">Episodes</Heading>
+        <Heading as="h2" marginBottom="4">
+          Episódios
+        </Heading>
         <EpisodesGrid />
       </Container>
     </>

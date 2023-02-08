@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Flex,
   FormControl,
@@ -27,9 +26,9 @@ export const SearchBox = () => {
     <>
       <Flex
         // w={{ base: "100%", md: "60%" }}
-        px={2}
+        w="100%"
         gap="2"
-        flexDirection={{ base: "column", sm: "row" }}
+        flexDirection={{ base: "column", md: "row" }}
       >
         <FormControl isInvalid={inputError}>
           <Input
@@ -43,17 +42,18 @@ export const SearchBox = () => {
             <FormErrorMessage>Valor necessário</FormErrorMessage>
           ) : null}
         </FormControl>
-        <Box>
-          <Button
-            w="100%"
-            leftIcon={<FiSearch />}
-            variant="solid"
-            onClick={goSearch}
-            colorScheme="brand"
-          >
-            Pesquisar
-          </Button>
-        </Box>
+
+        <Button
+          // w="100%"
+          px="6"
+          maxW="max-content"
+          leftIcon={<FiSearch />}
+          variant="solid"
+          onClick={goSearch}
+          colorScheme="brand"
+        >
+          Pesquisar
+        </Button>
       </Flex>
     </>
   );

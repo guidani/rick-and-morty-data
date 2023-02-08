@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const LargeNavigation = () => {
   return (
     <Container maxW="container.lg" display={{ base: "none", md: "block" }}>
-      <Center p="4">
+      <Center my="4">
         <Wrap w="100%">
           <WrapItem flex="1">
             <Center

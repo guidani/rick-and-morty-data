@@ -15,6 +15,7 @@ import {
 import React, { RefObject } from "react";
 import { FiMenu } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { SearchBox } from "./SearchBox";
 
 export default function CustomDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,8 +23,8 @@ export default function CustomDrawer() {
   return (
     <>
       <Box display={{ base: "block", md: "none" }}>
-        <Button ref={btnRef} onClick={onOpen} backgroundColor='transparent' >
-          <FiMenu size='30'/>
+        <Button ref={btnRef} onClick={onOpen} backgroundColor="transparent">
+          <FiMenu size="30" />
         </Button>
         <Drawer
           isOpen={isOpen}
@@ -34,7 +35,10 @@ export default function CustomDrawer() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Menu</DrawerHeader>
+            <DrawerHeader>
+              Menu
+              <SearchBox />
+            </DrawerHeader>
 
             <DrawerBody>
               <VStack>
