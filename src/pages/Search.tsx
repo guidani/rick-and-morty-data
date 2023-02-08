@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { CharacterCardComponent } from "../components/CharacterCardComponent";
+import { ErrorWidget } from "../components/ErrorWidget";
 import { ICharacter } from "../components/ICharacter";
 
 import { LoadingIcon } from "../components/LoadingIcon";
@@ -26,17 +27,19 @@ export const Search = () => {
   let hasNext = data?.characters?.info?.next;
 
   if (loading) return <LoadingIcon />;
-  if (error) return <p>Error...</p>;
+  if (error) return <ErrorWidget />;
 
   return (
     <>
       <Container maxW="container.lg">
-        <Heading as="h4">Resultado da busca</Heading>
+        <Heading as="h1" marginBottom="4" size="xl">
+          Resultado da busca
+        </Heading>
         {data.characters.results.length == 0 ? (
           <NotFound />
         ) : (
           <>
-            <HStack m='4'>
+            <HStack m="4">
               <Button
                 onClick={() => setCounter(counter - 1)}
                 disabled={hasPrev == null ? true : false}

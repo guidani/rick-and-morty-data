@@ -3,6 +3,7 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
 import { CharacterCardComponent } from "./CharacterCardComponent";
+import { ErrorWidget } from "./ErrorWidget";
 import { ICharacter } from "./ICharacter";
 import { LoadingIcon } from "./LoadingIcon";
 import { Pagination } from "./Pagination";
@@ -14,7 +15,7 @@ export const CharactersGrid = () => {
   });
 
   if (loading) return <LoadingIcon />;
-  if (error) return <p>Error...</p>;
+  if (error) return <ErrorWidget/>;
 
   return (
     <>

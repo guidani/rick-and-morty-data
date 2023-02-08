@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { GET_EPISODES } from "../services/graphql/queries/getEpisodes";
+import { ErrorWidget } from "./ErrorWidget";
 import { IEpisode } from "./IEpisode";
 import { LoadingIcon } from "./LoadingIcon";
 import { NotFound } from "./NotFound";
@@ -24,7 +25,7 @@ export const EpisodesGrid = () => {
   });
 
   if (loading) return <LoadingIcon />;
-  if (error) return <NotFound />;
+  if (error) return <ErrorWidget/>;
   return (
     <>
       <Pagination onClick={setCounter} data={data?.episodes?.info} />
