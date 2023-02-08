@@ -39,6 +39,17 @@ export const LargeNavigation = () => {
               <Link to="/episodes">Episódios</Link>
             </Center>
           </WrapItem>
+          <WrapItem flex="1">
+            <Center
+              w="100%"
+              minW="16rem"
+              h="40px"
+              bg="green.200"
+              borderRadius="md"
+            >
+              <Link to="/statistics">Estatisticas</Link>
+            </Center>
+          </WrapItem>
         </Wrap>
       </Center>
     </Container>

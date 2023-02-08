@@ -81,6 +81,19 @@ export default function CustomDrawer() {
                     </Link>
                   </Center>
                 </Box>
+                <Box>
+                  <Center
+                    w="100%"
+                    minW="16rem"
+                    h="40px"
+                    bg="green.200"
+                    borderRadius="md"
+                  >
+                    <Link to="/statistics" onClick={onOpen} ref={btnRef}>
+                      Estatisticas
+                    </Link>
+                  </Center>
+                </Box>
               </VStack>
             </DrawerBody>
 
