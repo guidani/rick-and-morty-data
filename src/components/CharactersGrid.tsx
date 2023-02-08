@@ -19,7 +19,6 @@ export const CharactersGrid = () => {
   return (
     <>
       {/*  */}
-
       <Pagination onClick={setCounter} data={data?.characters?.info} />
 
       {/*  */}
@@ -50,6 +49,11 @@ export const CharactersGrid = () => {
           )
         )}
       </SimpleGrid>
+      {/*  */}
+
+      <Pagination onClick={setCounter} data={data?.characters?.info} />
+
+      {/*  */}
     </>
   );
 };

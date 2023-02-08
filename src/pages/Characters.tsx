@@ -1,11 +1,16 @@
-import { Container, Heading } from "@chakra-ui/react";
+import { Center, Container, Heading } from "@chakra-ui/react";
 import { CharactersGrid } from "../components/CharactersGrid";
 
 export const Characters = () => {
+  console.log(window.location.pathname);
   return (
     <>
       <Container maxW="container.lg">
-        <Heading as="h2">Personagens</Heading>
+        <Center>
+          <Heading as="h1" marginBottom="4" size="xl">
+            Personagens
+          </Heading>
+        </Center>
         <CharactersGrid />
       </Container>
     </>
