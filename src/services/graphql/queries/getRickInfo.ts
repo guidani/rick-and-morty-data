@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const GET_RICKS = gql`
-  query getAliveRicks {
+  query getRicks {
     characters(filter: { name: "rick" }) {
       info {
         count
@@ -11,7 +11,7 @@ export const GET_RICKS = gql`
 `;
 
 export const GET_ALIVE_RICKS = gql`
-  query getRicks {
+  query getAliveRicks {
     characters(filter: { name: "rick", status: "alive" }) {
       info {
         count
