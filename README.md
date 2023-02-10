@@ -2,24 +2,14 @@
 
 ![vite](./public/rick_and_morty_cover.png)
 
-<p>Esse projeto utiliza a "rickandmortyapi", de onde os dados são recebidos. É possível visualizar uma grade com os personagens, passar páginas para ver mais personagens, pesquisar por um personagem específico e ver um detalhamento de cada personagem.</p>
+<p>Esse projeto utiliza a "rickandmortyapi", de onde os dados são recebidos. É possível visualizar personagens e seus status, ver os lugares que já foram apresentados na série, ver os episódios e algumas estatisticas. Também é possível realizar a busca de algum personagem.</p>
 
 ## Skills
 No projeto foram utilizadas as seguintes tecnologias:
-- ReactJS: framework front-end.
-- Chakra-ui: biblioteca de componentes
-- Graphql: linguagem de consulta de dados
-- Apollo Client: biblioteca de gerencia de estado utilizada para, entre outras funções, realizar as requisições na API.
+- [ReactJS](https://beta.reactjs.org/): biblioteca front-end para a contrução de Interfaces de Usuário.
+- [Chakra-ui](https://chakra-ui.com/): biblioteca de componentes para o ReactJS.
+- [Graphql](https://graphql.org/): linguagem de consulta de dados. Optei por usar-lo ao invés da REST API, com o intuito de conhecer mais sobre a tecnologia.
+- [Apollo Client](https://www.apollographql.com/): biblioteca de gerência de estado utilizada para, entre outras funções, realizar as requisições na API.
 
 ## Imagens
-
-![imagem](./public/photo_site_grid.png)
-
-![imagem](./public/photo_site_modal.png)
-
-
-## TODO
-- modo noturno.
-- troca entre visualização de grade e lista.
-- Drawer para a navegação no modo mobile
-- No modo mobile o item de pesquisa deve ser apenas um ícone
+> adicionar
