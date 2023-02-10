@@ -1,5 +1,12 @@
 import { useQuery } from "@apollo/client";
-import { Center, Container, Heading, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+  Center,
+  Container,
+  Divider,
+  Heading,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import { CustomStat } from "../components/CustomStat";
 import {
   GET_ALIVE_MORTYS,
@@ -13,6 +20,7 @@ import {
   GET_RICKS,
   GET_UNKNOW_RICKS,
 } from "../services/graphql/queries/getRickInfo";
+import { GET_CHARACTERS_COUNT, GET_EPISODES_COUNT } from "../services/graphql/queries/getShowInfo";
 
 export const Statistics = () => {
   const rickData = useQuery(GET_RICKS);
@@ -23,6 +31,8 @@ export const Statistics = () => {
   const aliveMortyData = useQuery(GET_ALIVE_MORTYS);
   const deadMortyData = useQuery(GET_DEAD_MORTYS);
   const unknowMortyData = useQuery(GET_UNKNOW_MORTYS);
+  const episodesCount = useQuery(GET_EPISODES_COUNT);
+  const charactersCount = useQuery(GET_CHARACTERS_COUNT);
 
   return (
     <>
@@ -59,6 +69,7 @@ export const Statistics = () => {
             />
           </WrapItem>
         </Wrap>
+        <Divider m="4"/>
         <Heading as="h2">Informação sobre o Morty</Heading>
         <Wrap>
           <WrapItem>
@@ -83,6 +94,22 @@ export const Statistics = () => {
             <CustomStat
               label="Ricks com paradeiro desconhecido"
               data={unknowMortyData?.data?.characters.info?.count}
+            />
+          </WrapItem>
+        </Wrap>
+        <Divider m="4"/>
+        <Heading as="h2">Informações sobre o show</Heading>
+        <Wrap>
+        <WrapItem>
+            <CustomStat
+              label="Total de episódios"
+              data={episodesCount?.data?.episodes.info?.count}
+            />
+          </WrapItem>
+        <WrapItem>
+            <CustomStat
+              label="Total de personagens"
+              data={charactersCount?.data?.characters.info?.count}
             />
           </WrapItem>
         </Wrap>
