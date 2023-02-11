@@ -1,8 +1,8 @@
 import { Box, Container, Heading, HStack, Spacer } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { ChangeColorModeButton } from "./ChangeColorModeButton";
-import CustomDrawer from "./CustomDrawer";
-import { SearchBox } from "./SearchBox";
+import { ChangeColorModeButton } from "../UI/ChangeColorModeButton";
+import CustomDrawer from "../UI/CustomDrawer";
+import { SearchBox } from "../UI/SearchBox";
 
 export const Header = () => {
   return (

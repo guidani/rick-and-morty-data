@@ -1,7 +1,7 @@
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import { FaRegFrown } from "react-icons/fa";
 
-// TODO: Adicionar uma imagem ou emoji
+
 export const NotFound = () => {
   return (
     <Box

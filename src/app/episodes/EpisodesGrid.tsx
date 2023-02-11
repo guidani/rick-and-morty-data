@@ -11,11 +11,11 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
-import { GET_EPISODES } from "../services/graphql/queries/getEpisodes";
-import { ErrorWidget } from "./ErrorWidget";
+import { ErrorWidget } from "../../components/UI/ErrorWidget";
+import { Pagination } from "../../components/UI/Pagination";
+import { TableSkeleton } from "../../components/UI/TableSkeleton";
+import { GET_EPISODES } from "../../services/graphql/queries/getEpisodes";
 import { IEpisode } from "./IEpisode";
-import { Pagination } from "./Pagination";
-import { TableSkeleton } from "./TableSkeleton";
 
 export const EpisodesGrid = () => {
   const [counter, setCounter] = useState(1);

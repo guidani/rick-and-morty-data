@@ -1,13 +1,13 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { NotFound } from "../components/NotFound";
-import Layout from "../pages/Layout";
+import Layout from "../app/Layout";
+import { NotFound } from "../components/UI/NotFound";
 
-const Characters = lazy(() => import("../pages/Characters"));
-const Episodes = lazy(() => import("../pages/Episodes"));
-const Locations = lazy(() => import("../pages/Locations"));
-const Search = lazy(() => import("../pages/Search"));
-const Statistics = lazy(() => import("../pages/Statistics"));
+const Characters = lazy(() => import("../app/characters/page"));
+const Episodes = lazy(() => import("../app/episodes/page"));
+const Locations = lazy(() => import("../app/locations/page"));
+const Search = lazy(() => import("../app/search_character/page"));
+const Statistics = lazy(() => import("../app/statistics/page"));
 
 // !TODO: atualizar imports para lazy loading
 export const Router = () => {

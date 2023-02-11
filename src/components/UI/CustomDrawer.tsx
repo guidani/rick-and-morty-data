@@ -102,7 +102,7 @@ export default function CustomDrawer() {
             </DrawerBody>
 
             <DrawerFooter>
-              <HStack w='100%'>
+              <HStack w="100%">
                 <ChangeColorModeButton />
                 <Spacer />
                 <Text>Rick and Morty</Text>

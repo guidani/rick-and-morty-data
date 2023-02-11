@@ -1,20 +1,20 @@
 import { Center, Container, Heading } from "@chakra-ui/react";
-import { LocationsGrid } from "../components/LocationsGrid";
+import { EpisodesGrid } from "./EpisodesGrid";
 
-const Locations = () => {
+const Episodes = () => {
   console.log(window.location.pathname);
   return (
     <>
       <Container maxW="container.lg">
         <Center>
           <Heading as="h1" marginBottom="4" size="xl">
-            Lugares
+            Episódios
           </Heading>
         </Center>
-        <LocationsGrid />
+        <EpisodesGrid />
       </Container>
     </>
   );
 };
 
-export default Locations;
+export default Episodes;

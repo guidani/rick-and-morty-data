@@ -1,7 +1,7 @@
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import { FiXOctagon } from "react-icons/fi";
 
-// TODO: Adicionar uma imagem ou emoji
+
 export const ErrorWidget = () => {
   return (
     <Box

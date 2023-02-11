@@ -7,23 +7,23 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { CustomStat } from "../components/CustomStat";
+import { CustomStat } from "../../components/UI/CustomStat";
 import {
   GET_ALIVE_MORTYS,
   GET_DEAD_MORTYS,
   GET_MORTYS,
   GET_UNKNOW_MORTYS,
-} from "../services/graphql/queries/getMortyInfo";
+} from "../../services/graphql/queries/getMortyInfo";
 import {
   GET_ALIVE_RICKS,
   GET_DEAD_RICKS,
   GET_RICKS,
   GET_UNKNOW_RICKS,
-} from "../services/graphql/queries/getRickInfo";
+} from "../../services/graphql/queries/getRickInfo";
 import {
   GET_CHARACTERS_COUNT,
   GET_EPISODES_COUNT,
-} from "../services/graphql/queries/getShowInfo";
+} from "../../services/graphql/queries/getShowInfo";
 
 const Statistics = () => {
   const rickData = useQuery(GET_RICKS);

@@ -11,11 +11,11 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
-import { GET_LOCATIONS } from "../services/graphql/queries/getLocations";
-import { ErrorWidget } from "./ErrorWidget";
+import { ErrorWidget } from "../../components/UI/ErrorWidget";
+import { Pagination } from "../../components/UI/Pagination";
+import { TableSkeleton } from "../../components/UI/TableSkeleton";
+import { GET_LOCATIONS } from "../../services/graphql/queries/getLocations";
 import { ILocation } from "./ILocation";
-import { Pagination } from "./Pagination";
-import { TableSkeleton } from "./TableSkeleton";
 
 export const LocationsGrid = () => {
   const [counter, setCounter] = useState(1);

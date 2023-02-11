@@ -8,14 +8,15 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { CharacterCardComponent } from "../components/CharacterCardComponent";
-import { ErrorWidget } from "../components/ErrorWidget";
-import { ICharacter } from "../components/ICharacter";
+import { ErrorWidget } from "../../components/UI/ErrorWidget";
+import { CharacterCardComponent } from "../characters/CharacterCardComponent";
+import { ICharacter } from "../characters/ICharacter";
 
-import { LoadingIcon } from "../components/LoadingIcon";
-import { NotFound } from "../components/NotFound";
-import { GET_CHARACTER_BY_NAME } from "../services/graphql/queries/getCharacterByName";
+import { LoadingIcon } from "../../components/UI/LoadingIcon";
+import { NotFound } from "../../components/UI/NotFound";
+import { GET_CHARACTER_BY_NAME } from "../../services/graphql/queries/getCharacterByName";
 
+// TODO: atualizar esse componente
 const Search = () => {
   const [counter, setCounter] = useState(1);
   const { name } = useParams();
