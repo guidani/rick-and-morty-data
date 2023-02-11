@@ -2,7 +2,7 @@ import { Center, Container, Heading } from "@chakra-ui/react";
 import { CharactersGrid } from "./CharactersGrid";
 
 const Characters = () => {
-  console.log(window.location.pathname);
+  
   return (
     <>
       <Container maxW="container.lg">

@@ -1,22 +1,17 @@
 import { useQuery } from "@apollo/client";
-import {
-  Button,
-  Container,
-  Heading,
-  HStack,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Center, Container, Heading, SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ErrorWidget } from "../../components/UI/ErrorWidget";
 import { CharacterCardComponent } from "../characters/CharacterCardComponent";
 import { ICharacter } from "../characters/ICharacter";
 
-import { LoadingIcon } from "../../components/UI/LoadingIcon";
+import { CardSkeleton } from "../../components/UI/CardSkeleton";
 import { NotFound } from "../../components/UI/NotFound";
+import { Pagination } from "../../components/UI/Pagination";
 import { GET_CHARACTER_BY_NAME } from "../../services/graphql/queries/getCharacterByName";
 
-// TODO: atualizar esse componente
+
 const Search = () => {
   const [counter, setCounter] = useState(1);
   const { name } = useParams();
@@ -24,36 +19,23 @@ const Search = () => {
     variables: { name: name, page: counter },
   });
 
-  let hasPrev = data?.characters?.info?.prev;
-  let hasNext = data?.characters?.info?.next;
-
-  if (loading) return <LoadingIcon />;
+  if (loading) return <CardSkeleton />;
   if (error) return <ErrorWidget />;
 
   return (
     <>
       <Container maxW="container.lg">
-        <Heading as="h1" marginBottom="4" size="xl">
-          Resultado da busca
-        </Heading>
+        <Center>
+          <Heading as="h1" marginBottom="4" size="xl">
+            Resultado da busca
+          </Heading>
+        </Center>
         {data.characters.results.length == 0 ? (
           <NotFound />
         ) : (
           <>
-            <HStack m="4">
-              <Button
-                onClick={() => setCounter(counter - 1)}
-                disabled={hasPrev == null ? true : false}
-              >
-                Anterior
-              </Button>
-              <Button
-                onClick={() => setCounter(counter + 1)}
-                disabled={hasNext ? false : true}
-              >
-                Próximo
-              </Button>
-            </HStack>
+            <Pagination onClick={setCounter} data={data?.characters?.info} />
+
             <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={5} px={2}>
               {data?.characters?.results.map(
                 ({
@@ -80,6 +62,8 @@ const Search = () => {
                 )
               )}
             </SimpleGrid>
+
+            <Pagination onClick={setCounter} data={data?.characters?.info} />
           </>
         )}
       </Container>
