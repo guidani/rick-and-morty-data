@@ -1,7 +1,7 @@
 import { Center, Container, Heading } from "@chakra-ui/react";
 import { EpisodesGrid } from "../components/EpisodesGrid";
 
-export const Episodes = () => {
+const Episodes = () => {
   console.log(window.location.pathname);
   return (
     <>
@@ -16,3 +16,5 @@ export const Episodes = () => {
     </>
   );
 };
+
+export default Episodes;

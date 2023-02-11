@@ -25,7 +25,7 @@ import {
   GET_EPISODES_COUNT,
 } from "../services/graphql/queries/getShowInfo";
 
-export const Statistics = () => {
+const Statistics = () => {
   const rickData = useQuery(GET_RICKS);
   const aliveRickData = useQuery(GET_ALIVE_RICKS);
   const deadRickData = useQuery(GET_DEAD_RICKS);
@@ -120,3 +120,5 @@ export const Statistics = () => {
     </>
   );
 };
+
+export default Statistics;

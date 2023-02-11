@@ -16,7 +16,7 @@ import { LoadingIcon } from "../components/LoadingIcon";
 import { NotFound } from "../components/NotFound";
 import { GET_CHARACTER_BY_NAME } from "../services/graphql/queries/getCharacterByName";
 
-export const Search = () => {
+const Search = () => {
   const [counter, setCounter] = useState(1);
   const { name } = useParams();
   const { loading, error, data } = useQuery(GET_CHARACTER_BY_NAME, {
@@ -85,3 +85,5 @@ export const Search = () => {
     </>
   );
 };
+
+export default Search;

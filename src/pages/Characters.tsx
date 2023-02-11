@@ -1,7 +1,7 @@
 import { Center, Container, Heading } from "@chakra-ui/react";
 import { CharactersGrid } from "../components/CharactersGrid";
 
-export const Characters = () => {
+const Characters = () => {
   console.log(window.location.pathname);
   return (
     <>
@@ -16,3 +16,4 @@ export const Characters = () => {
     </>
   );
 };
+export default Characters;

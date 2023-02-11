@@ -1,23 +1,67 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { NotFound } from "../components/NotFound";
-import { Characters } from "../pages/Characters";
-import { Episodes } from "../pages/Episodes";
 import Layout from "../pages/Layout";
-import { Locations } from "../pages/Locations";
-import { Search } from "../pages/Search";
-import { Statistics } from "../pages/Statistics";
+
+const Characters = lazy(() => import("../pages/Characters"));
+const Episodes = lazy(() => import("../pages/Episodes"));
+const Locations = lazy(() => import("../pages/Locations"));
+const Search = lazy(() => import("../pages/Search"));
+const Statistics = lazy(() => import("../pages/Statistics"));
 
 // !TODO: atualizar imports para lazy loading
 export const Router = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<Characters />} />
-        <Route path="/search/:name" element={<Search />} />
-        <Route path="/locations" element={<Locations />} />
-        <Route path="/episodes" element={<Episodes />} />
-        <Route path="/statistics" element={<Statistics />} />
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/"
+          element={
+            <Suspense>
+              <Characters />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/search/:name"
+          element={
+            <Suspense>
+              <Search />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/locations"
+          element={
+            <Suspense>
+              <Locations />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/episodes"
+          element={
+            <Suspense>
+              <Episodes />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/statistics"
+          element={
+            <Suspense>
+              <Statistics />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Suspense>
+              <NotFound />
+            </Suspense>
+          }
+        />
       </Route>
     </Routes>
   );

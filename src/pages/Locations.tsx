@@ -1,7 +1,7 @@
 import { Center, Container, Heading } from "@chakra-ui/react";
 import { LocationsGrid } from "../components/LocationsGrid";
 
-export const Locations = () => {
+const Locations = () => {
   console.log(window.location.pathname);
   return (
     <>
@@ -16,3 +16,5 @@ export const Locations = () => {
     </>
   );
 };
+
+export default Locations;
