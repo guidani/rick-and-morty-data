@@ -14,9 +14,8 @@ import { FiExternalLink } from "react-icons/fi";
 import { GET_EPISODES } from "../services/graphql/queries/getEpisodes";
 import { ErrorWidget } from "./ErrorWidget";
 import { IEpisode } from "./IEpisode";
-import { LoadingIcon } from "./LoadingIcon";
-import { NotFound } from "./NotFound";
 import { Pagination } from "./Pagination";
+import { TableSkeleton } from "./TableSkeleton";
 
 export const EpisodesGrid = () => {
   const [counter, setCounter] = useState(1);
@@ -24,8 +23,8 @@ export const EpisodesGrid = () => {
     variables: { page: counter },
   });
 
-  if (loading) return <LoadingIcon />;
-  if (error) return <ErrorWidget/>;
+  if (loading) return <TableSkeleton />;
+  if (error) return <ErrorWidget />;
   return (
     <>
       <Pagination onClick={setCounter} data={data?.episodes?.info} />

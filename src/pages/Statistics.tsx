@@ -20,7 +20,10 @@ import {
   GET_RICKS,
   GET_UNKNOW_RICKS,
 } from "../services/graphql/queries/getRickInfo";
-import { GET_CHARACTERS_COUNT, GET_EPISODES_COUNT } from "../services/graphql/queries/getShowInfo";
+import {
+  GET_CHARACTERS_COUNT,
+  GET_EPISODES_COUNT,
+} from "../services/graphql/queries/getShowInfo";
 
 export const Statistics = () => {
   const rickData = useQuery(GET_RICKS);
@@ -69,7 +72,7 @@ export const Statistics = () => {
             />
           </WrapItem>
         </Wrap>
-        <Divider m="4"/>
+        <Divider m="4" />
         <Heading as="h2">Informação sobre o Morty</Heading>
         <Wrap>
           <WrapItem>
@@ -97,16 +100,16 @@ export const Statistics = () => {
             />
           </WrapItem>
         </Wrap>
-        <Divider m="4"/>
+        <Divider m="4" />
         <Heading as="h2">Informações sobre o show</Heading>
         <Wrap>
-        <WrapItem>
+          <WrapItem>
             <CustomStat
               label="Total de episódios"
               data={episodesCount?.data?.episodes.info?.count}
             />
           </WrapItem>
-        <WrapItem>
+          <WrapItem>
             <CustomStat
               label="Total de personagens"
               data={charactersCount?.data?.characters.info?.count}

@@ -2,10 +2,10 @@ import { useQuery } from "@apollo/client";
 import { SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
 import { GET_CHARACTERS } from "../services/graphql/queries/getCharacters";
+import { CardSkeleton } from "./CardSkeleton";
 import { CharacterCardComponent } from "./CharacterCardComponent";
 import { ErrorWidget } from "./ErrorWidget";
 import { ICharacter } from "./ICharacter";
-import { LoadingIcon } from "./LoadingIcon";
 import { Pagination } from "./Pagination";
 
 export const CharactersGrid = () => {
@@ -14,8 +14,8 @@ export const CharactersGrid = () => {
     variables: { page: counter },
   });
 
-  if (loading) return <LoadingIcon />;
-  if (error) return <ErrorWidget/>;
+  if (loading) return <CardSkeleton />;
+  if (error) return <ErrorWidget />;
 
   return (
     <>
