@@ -24,17 +24,15 @@ export const SearchBox = () => {
   }
   return (
     <>
-      <Flex
-        // w={{ base: "100%", md: "60%" }}
-        w="100%"
-        gap="2"
-        flexDirection={{ base: "column", md: "row" }}
-      >
+      <Flex w="100%" gap="2" flexDirection={{ base: "column", md: "row" }}>
         <FormControl isInvalid={inputError}>
           <Input
+            variant="outline"
             width="100%"
             htmlSize={4}
             placeholder="Buscar um personagem"
+            _placeholder={{ color: "white" }}
+            _focus={{ borderColor: "white" }}
             errorBorderColor="red.300"
             onChange={(e) => setName(e.target.value)}
           />
@@ -44,7 +42,6 @@ export const SearchBox = () => {
         </FormControl>
 
         <Button
-          // w="100%"
           px="6"
           maxW="max-content"
           leftIcon={<FiSearch />}

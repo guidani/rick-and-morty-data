@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <Box
       color="#ffffff"
-      bg={"blue.300"}
+      bg={"blue.500"}
       w="100%"
       display="flex"
       flexDirection={{ base: "column", md: "row" }}
