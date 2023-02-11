@@ -6,6 +6,7 @@ import { NotFound } from "../components/UI/NotFound";
 const Characters = lazy(() => import("../app/characters/page"));
 const Episodes = lazy(() => import("../app/episodes/page"));
 const Locations = lazy(() => import("../app/locations/page"));
+const Location = lazy(() => import("../app/location/page"));
 const Search = lazy(() => import("../app/search_character/page"));
 const Statistics = lazy(() => import("../app/statistics/page"));
 
@@ -13,9 +14,9 @@ const Statistics = lazy(() => import("../app/statistics/page"));
 export const Router = () => {
   return (
     <Routes>
-      <Route element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route
-          path="/"
+          index={true}
           element={
             <Suspense>
               <Characters />
@@ -23,7 +24,7 @@ export const Router = () => {
           }
         />
         <Route
-          path="/search/:name"
+          path="search/:name"
           element={
             <Suspense>
               <Search />
@@ -31,15 +32,24 @@ export const Router = () => {
           }
         />
         <Route
-          path="/locations"
+          path="locations"
           element={
             <Suspense>
               <Locations />
             </Suspense>
           }
         />
+
         <Route
-          path="/episodes"
+          path="location/:id"
+          element={
+            <Suspense>
+              <Location />
+            </Suspense>
+          }
+        />
+        <Route
+          path="episodes"
           element={
             <Suspense>
               <Episodes />
@@ -47,7 +57,7 @@ export const Router = () => {
           }
         />
         <Route
-          path="/statistics"
+          path="statistics"
           element={
             <Suspense>
               <Statistics />

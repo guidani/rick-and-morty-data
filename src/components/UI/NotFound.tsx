@@ -1,7 +1,6 @@
 import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import { FaRegFrown } from "react-icons/fa";
 
-
 export const NotFound = () => {
   return (
     <Box

@@ -2,7 +2,6 @@ import { Center, Container, Heading } from "@chakra-ui/react";
 import { LocationsGrid } from "./LocationsGrid";
 
 const Locations = () => {
-  console.log(window.location.pathname);
   return (
     <>
       <Container maxW="container.lg">
