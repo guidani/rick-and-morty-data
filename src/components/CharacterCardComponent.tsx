@@ -29,7 +29,7 @@ export const CharacterCardComponent = ({
 
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={image} alt={name} />
+      <Image src={image} alt={name} objectFit='cover' w="100%"/>
       <Box p={2}>
         <Flex justifyContent="space-between">
           <Text>Name</Text>
@@ -49,7 +49,7 @@ export const CharacterCardComponent = ({
             <ModalHeader alignSelf="center">{name}</ModalHeader>
             {/* <ModalCloseButton /> */}
             <ModalBody>
-              <Image src={image} alt={name} alignSelf="center" />
+              <Image src={image} alt={name} alignSelf="center" objectFit='cover' w="100%"/>
               <Flex justifyContent="space-between">
                 <Text>Status:</Text>
                 <CustomBadge status={status} />
