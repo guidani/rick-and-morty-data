@@ -51,7 +51,8 @@ export default function CustomDrawer() {
                     w="100%"
                     minW="16rem"
                     h="40px"
-                    bg="red.200"
+                    bgColor="red.400"
+                    color="blackAlpha.900"
                     borderRadius="md"
                   >
                     <Link to="/">Personagens</Link>
@@ -62,7 +63,8 @@ export default function CustomDrawer() {
                     w="100%"
                     minW="16rem"
                     h="40px"
-                    bg="tomato"
+                    bgColor="green.400"
+                    color="blackAlpha.900"
                     borderRadius="md"
                   >
                     <Link to="/locations">Lugares</Link>
@@ -73,7 +75,8 @@ export default function CustomDrawer() {
                     w="100%"
                     minW="16rem"
                     h="40px"
-                    bg="blue.200"
+                    bgColor="blue.400"
+                    color="blackAlpha.900"
                     borderRadius="md"
                   >
                     <Link to="/episodes" onClick={onOpen} ref={btnRef}>
@@ -86,7 +89,8 @@ export default function CustomDrawer() {
                     w="100%"
                     minW="16rem"
                     h="40px"
-                    bg="green.200"
+                    bgColor="yellow.300"
+                    color="blackAlpha.900"
                     borderRadius="md"
                   >
                     <Link to="/statistics" onClick={onOpen} ref={btnRef}>

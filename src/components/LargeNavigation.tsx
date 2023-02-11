@@ -21,6 +21,7 @@ export const LargeNavigation = () => {
             as={RouterLink}
             to="/"
             display="block"
+            color="blackAlpha.900"
             fontWeight="400"
             _hover={{ textDecoration: "none" }}
           >
@@ -40,6 +41,7 @@ export const LargeNavigation = () => {
             to="/locations"
             display="block"
             fontWeight="400"
+            color="blackAlpha.900"
             _hover={{ textDecoration: "none" }}
           >
             Lugares
@@ -50,6 +52,7 @@ export const LargeNavigation = () => {
           bgColor="blue.400"
           textAlign="center"
           py="2"
+          
           borderRadius="md"
           _hover={{backgroundColor: 'blue.500'}}
         >
@@ -58,6 +61,7 @@ export const LargeNavigation = () => {
             to="/episodes"
             display="block"
             fontWeight="400"
+            color="blackAlpha.900"
             _hover={{ textDecoration: "none" }}
           >
             Episódios
@@ -76,6 +80,7 @@ export const LargeNavigation = () => {
             to="/statistics"
             display="block"
             fontWeight="400"
+            color="blackAlpha.900"
             _hover={{ textDecoration: "none" }}
           >
             Estatisticas
