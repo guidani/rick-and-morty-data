@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import { ErrorWidget } from "../../components/UI/ErrorWidget";
 import { Pagination } from "../../components/UI/Pagination";
 import { TableSkeleton } from "../../components/UI/TableSkeleton";
@@ -50,7 +51,8 @@ export const LocationsGrid = () => {
                   <Td>{dimension}</Td>
                   <Td>
                     <HStack>
-                      <p>Ver</p> <FiExternalLink />
+                      <p>Ver</p> 
+                      <Link to={`/location/${id}`}><FiExternalLink /></Link>
                     </HStack>
                   </Td>
                 </Tr>
