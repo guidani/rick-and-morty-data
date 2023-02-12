@@ -2,7 +2,7 @@ import { Center, Container, Heading } from "@chakra-ui/react";
 import { EpisodesGrid } from "./EpisodesGrid";
 
 const Episodes = () => {
-  console.log(window.location.pathname);
+  
   return (
     <>
       <Container maxW="container.lg">

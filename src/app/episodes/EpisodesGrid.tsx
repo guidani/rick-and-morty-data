@@ -59,6 +59,8 @@ export const EpisodesGrid = () => {
           </Tbody>
         </Table>
       </TableContainer>
+
+      <Pagination onClick={setCounter} data={data?.episodes?.info} />
     </>
   );
 };

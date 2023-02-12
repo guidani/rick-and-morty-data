@@ -32,7 +32,7 @@ export const CharacterCardComponent = ({
       <Image src={image} alt={name} objectFit="cover" w="100%" />
       <Box p={2}>
         <Flex justifyContent="space-between">
-          <Text>Name</Text>
+          <Text>Nome</Text>
           <Text noOfLines={1}>{name}</Text>
         </Flex>
         <Flex justifyContent="space-between">
@@ -61,26 +61,26 @@ export const CharacterCardComponent = ({
                 <CustomBadge status={status} />
               </Flex>
               <Flex justifyContent="space-between">
-                <Text>Specie:</Text>
+                <Text>Espécie:</Text>
                 <Text>{species}</Text>
               </Flex>
               <Flex justifyContent="space-between">
-                <Text>Gender:</Text>
+                <Text>Gênero:</Text>
                 <Text>{gender}</Text>
               </Flex>
               <Flex justifyContent="space-between">
-                <Text>Origin:</Text>
+                <Text>Origem:</Text>
                 <Text>{origin?.name}</Text>
               </Flex>
               <Flex justifyContent="space-between">
-                <Text>Location:</Text>
+                <Text>Localização:</Text>
                 <Text>{location?.name}</Text>
               </Flex>
             </ModalBody>
             {/*  */}
             <ModalFooter>
               <Button colorScheme="red" onClick={onClose} w="full">
-                Close
+                Fechar
               </Button>
             </ModalFooter>
           </ModalContent>

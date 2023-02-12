@@ -61,6 +61,9 @@ export const LocationsGrid = () => {
           </Tbody>
         </Table>
       </TableContainer>
+
+      <Pagination onClick={setCounter} data={data?.locations?.info} />
+
     </>
   );
 };
