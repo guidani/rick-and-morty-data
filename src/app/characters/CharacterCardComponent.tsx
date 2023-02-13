@@ -28,7 +28,7 @@ export const CharacterCardComponent = ({
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden" key={id}>
       <Image src={image} alt={name} objectFit="cover" w="100%" />
       <Box p={2}>
         <Flex justifyContent="space-between">

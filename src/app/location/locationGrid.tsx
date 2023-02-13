@@ -57,7 +57,7 @@ export const LocationGrid = () => {
           </Thead>
           <Tbody>
             {data?.location?.residents.map(({ id, name }: IResident) => (
-              <Tr>
+              <Tr key={id}>
                 <Td>{id}</Td>
                 <Td>{name}</Td>
               </Tr>

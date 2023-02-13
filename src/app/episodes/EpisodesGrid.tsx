@@ -43,7 +43,7 @@ export const EpisodesGrid = () => {
           <Tbody>
             {data?.episodes?.results.map(
               ({ id, name, episode, air_date }: IEpisode) => (
-                <Tr>
+                <Tr key={id}>
                   <Td>{id}</Td>
                   <Td>{episode}</Td>
                   <Td>{name}</Td>
