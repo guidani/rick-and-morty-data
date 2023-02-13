@@ -1,7 +1,26 @@
 import { Container, Grid, GridItem, Link } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
 export const LargeNavigation = () => {
+  const location = useLocation();
+  const pathName = location.pathname.substring(1);
+
+  const isCharPage = () => {
+    const pathName = location.pathname;
+    if (pathName === "/") return true;
+  };
+
+  const isLocationPage = () => {
+    if (pathName === "locations") return true;
+  };
+
+  const isEpisodesPage = () => {
+    if (pathName === "episodes") return true;
+  };
+  const isStatisticsPage = () => {
+    if (pathName === "statistics") return true;
+  };
+
   return (
     <Container
       maxW="container.lg"
@@ -14,8 +33,11 @@ export const LargeNavigation = () => {
           bgColor="red.400"
           textAlign="center"
           py="2"
+          border={isCharPage() ? "2px" : "none"}
+          borderStyle="solid"
+          borderColor="brand.500"
           borderRadius="md"
-          _hover={{backgroundColor: 'red.500'}}
+          _hover={{ backgroundColor: "red.500" }}
         >
           <Link
             as={RouterLink}
@@ -34,7 +56,10 @@ export const LargeNavigation = () => {
           textAlign="center"
           py="2"
           borderRadius="md"
-          _hover={{backgroundColor: 'green.500'}}
+          _hover={{ backgroundColor: "green.500" }}
+          border={isLocationPage() ? "2px" : "none"}
+          borderStyle="solid"
+          borderColor="brand.500"
         >
           <Link
             as={RouterLink}
@@ -52,9 +77,11 @@ export const LargeNavigation = () => {
           bgColor="blue.400"
           textAlign="center"
           py="2"
-          
           borderRadius="md"
-          _hover={{backgroundColor: 'blue.500'}}
+          _hover={{ backgroundColor: "blue.500" }}
+          border={isEpisodesPage() ? "2px" : "none"}
+          borderStyle="solid"
+          borderColor="brand.500"
         >
           <Link
             as={RouterLink}
@@ -73,7 +100,10 @@ export const LargeNavigation = () => {
           textAlign="center"
           py="2"
           borderRadius="md"
-          _hover={{backgroundColor: 'yellow.500'}}
+          _hover={{ backgroundColor: "yellow.500" }}
+          border={isStatisticsPage() ? "2px" : "none"}
+          borderStyle="solid"
+          borderColor="brand.500"
         >
           <Link
             as={RouterLink}
